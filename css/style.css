@@ -1,0 +1,403 @@
+@font-face {
+    font-family: 'Merienda';
+    src: url('../fonts/Merienda-Regular.ttf') format('truetype');
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: 'Merienda';
+    src: url('../fonts/Merienda-Bold.ttf') format('truetype');
+    font-weight: 700;
+}
+
+.container {
+    padding: 0 180px;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+p {
+    margin: 0;
+}
+
+*::selection {
+    background-color: #42382698;
+    /* сменить? */
+    color: #fff;
+}
+
+li,
+img,
+a,
+button {
+    user-select: none;
+}
+
+section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+body {
+    font-family: 'Merienda';
+    margin: 0;
+}
+
+.nav {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    list-style: none;
+    gap: 40px;
+    margin-top: 52px;
+}
+
+.nav-mt0 {
+    margin-top: 0;
+}
+
+.nav li {
+    position: relative;
+    cursor: pointer;
+    font-weight: 400;
+    font-size: 16px;
+    color: #fff;
+    transition: all 0.4s;
+}
+
+.nav li::after {
+    position: absolute;
+    left: 50%;
+    bottom: -2px;
+    height: 1px;
+    background: #fff;
+    content: '';
+    width: 0;
+    transition: all 0.4s;
+}
+
+.nav li:hover::after {
+    width: 100%;
+    left: 0;
+}
+
+.nav li img {
+    position: absolute;
+    width: 35px;
+    height: 35px;
+    top: -22px;
+    left: -30px;
+}
+
+.nav-center {
+    margin-top: 0;
+    justify-content: center;
+    gap: 40px;
+}
+
+.nav-g83 {
+    gap: 83px;
+}
+
+.nav-center li {
+    color: #000;
+}
+
+.nav-center li::after {
+    background: #000;
+}
+
+.nav-mt61 {
+    margin-top: 61px;
+}
+
+.nav-g19 {
+    gap: 19px;
+}
+
+.footer {
+    padding: 50px 0 20px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    min-height: 150px;
+}
+
+.line {
+    border: 1px solid #000;
+    width: 60px;
+    height: 0px;
+}
+
+.line-long {
+    margin: 0 auto;
+    width: 240px;
+}
+
+.line-white {
+    border-color: #fff;
+}
+
+.headerBg {
+    position: absolute;
+    z-index: -2;
+    top: 0;
+    left: 0;
+    right: 0;
+    object-fit: cover;
+    width: 100%;
+}
+
+.promo {
+    min-height: 660px;
+}
+
+.pleasure-promo {
+    min-height: 215px;
+}
+
+.title {
+    text-align: center;
+    margin: 0;
+    font-weight: 700;
+    font-size: 24px;
+    color: #fff;
+    text-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+}
+
+.title-big {
+    font-size: 40px;
+}
+
+.title-mt {
+    margin-top: 15px;
+}
+
+.title-black {
+    color: #000;
+}
+
+.title-center {
+    width: 100%;
+}
+
+.btn {
+    width: 160px;
+    height: 35px;
+    font-weight: 700;
+    font-size: 16px;
+    color: #fff;
+    background: transparent;
+    border: 1px solid #fff;
+    cursor: pointer;
+    transition: all 0.4s;
+}
+
+.btn:hover {
+    width: 180px;
+    box-shadow: 0px 0px 12px 12px rgba(255, 255, 255, 0.6);
+}
+
+
+.about {
+    margin-top: 80px;
+    margin-bottom: 100px;
+}
+
+.descr {
+    font-weight: 400;
+    font-size: 14px;
+    text-align: center;
+    color: #000;
+    margin: 0;
+    width: 346px;
+}
+
+.descr-cont {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.descr-left {
+    text-align: left;
+}
+
+.descr-price {
+    font-size: 24px;
+}
+
+.descr-span {
+    font-weight: 700;
+    font-size: 14px;
+}
+
+.descr-line_height {
+    line-height: 170%;
+    width: 330px;
+}
+
+.about__descr {
+    width: 590px;
+}
+
+.about__descr-mt {
+    margin-top: 25px;
+}
+
+.best {
+    gap: 39px;
+    background: url('../img/bg/color_bg.jpg') center center / cover no-repeat;
+    min-height: 495px;
+}
+
+
+.best__list {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 71px;
+}
+
+.card {
+    border-radius: 8px;
+    width: 245px;
+    height: 240px;
+    background: rgba(255, 255, 255, 0.65);
+    padding: 21px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.card-white {
+    width: 225px;
+    height: 260px;
+    box-shadow: 5px 5px 15px 0 rgba(0, 0, 0, 0.25);
+    background: #fff;
+    cursor: pointer;
+    transition: all 0.4s;
+}
+
+.card-white:hover {
+    box-shadow: 5px 5px 30px 0 rgba(0, 0, 0, 0.412);
+}
+
+.card-img {
+    max-width: 167px;
+    max-height: 134px;
+    object-fit: cover;
+}
+
+.card-descr {
+    margin: 0;
+    font-weight: 400;
+    font-size: 14px;
+    text-align: center;
+    color: #000;
+}
+
+.card-descr-mt4 {
+    margin-top: 4px;
+}
+
+.card-price {
+    width: 100%;
+    text-align: right;
+}
+
+
+.pleasure-about {
+    padding: 70px 0 60px 0;
+    gap: 90px;
+    flex-direction: row;
+}
+
+
+.pleasure-about__img {
+    box-shadow: 5px 5px 30px 0 rgba(0, 0, 0, 0.25);
+}
+
+.pleasure-about__descr {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.catalog {
+    flex-direction: row;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    row-gap: 60px;
+    column-gap: 71px;
+    padding-bottom: 30px;
+    padding-top: 60px;
+    width: 817px;
+    box-sizing: content-box;
+    margin: 0 auto;
+}
+
+.tabs {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+}
+
+.tab {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 4px 0 0 4px;
+    width: 95px;
+    height: 30px;
+    box-shadow: 4px 4px 20px 0 rgba(0, 0, 0, 0.25);
+    background: #fff;
+    font-weight: 400;
+    font-size: 14px;
+    color: #000;
+    cursor: pointer;
+    transition: all 0.4s;
+}
+
+.tab-active {
+    width: 105px;
+    /* создать стиль активности залить цветом? */
+    background-color: #42382698;
+    /* сменить? */
+    color: #fff;
+
+}
+
+#search {
+    font-weight: 400;
+    font-size: 14px;
+    text-align: center;
+    padding: 6px 36px;
+    border-radius: 4px;
+    width: 180px;
+    height: 30px;
+    box-shadow: 4px 4px 20px 0 rgba(0, 0, 0, 0.25);
+    background: #fff;
+    border: none;
+    outline: none;
+    transition: all 0.4s;
+}
+
+#search:focus {
+    width: 200px;
+    box-shadow: 6px 6px 35px 0 rgba(0, 0, 0, 0.25);
+}
