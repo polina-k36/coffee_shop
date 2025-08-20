@@ -1,4 +1,4 @@
-const PromoCoffee = ({data}) => {
+const PromoCoffee = ({data, onChangePage, prevPage}) => {
     return (
         <div className="coffee_promo">
             <img className="headerBg" src="img/bg/our_coffee_bg.jpg" alt="background"/>
@@ -21,6 +21,7 @@ const PromoCoffee = ({data}) => {
                 </div>
                 </div>
             </section>
+            <div className="nav nav-center"><li className="link_back" onClick={() => {onChangePage(prevPage)}}>Back</li></div>
         </div>
     )
 }

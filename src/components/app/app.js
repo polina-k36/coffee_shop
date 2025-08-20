@@ -14,6 +14,7 @@ class App extends Component {
         super(props);
         this.state = {
             activePage: 'main',
+            prevPage: 'main',
             data: [
                 {name: "AROMISTICO Coffee 2 kg", descr: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.", country: "Brazil", price: 16.99, img: ["img/aromistico.png", "img/aromistico_promo.jpg"], id: 1},
                 {name: "AROMISTICO Coffee 1 kg", descr: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.", country: "Kenya", price: 6.99, img: ["img/aromistico.png", "img/aromistico_promo.jpg"], id: 2},
@@ -22,7 +23,7 @@ class App extends Component {
                 {name: "AROMISTICO Coffee 1.5 kg", descr: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.", country: "Brazil", price: 12.99, img: ["img/aromistico.png", "img/aromistico_promo.jpg"], id: 5},
                 {name: "AROMISTICO Coffee 1.2 kg", descr: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.", country: "Kenya", price: 10.99, img: ["img/aromistico.png", "img/aromistico_promo.jpg"], id: 6}
             ],
-            activeCountry: ['Brazil', 'Columbia', 'Kenya'],
+            activeCountry: [],
             activeId: 1,
             foundStr: ''
             
@@ -47,7 +48,12 @@ class App extends Component {
     }
 
     filterDataforCountry = (data) => {
-        const visibleData = data.filter(el => this.state.activeCountry.includes(el.country));
+        let visibleData;
+        if (this.state.activeCountry.length >= 1){
+            visibleData = data.filter(el => this.state.activeCountry.includes(el.country));
+        } else{
+            visibleData = data;
+        }
         return visibleData;
     }
 
@@ -57,7 +63,9 @@ class App extends Component {
     }
 
     changePage = (activePage, activeId=0) => {
-        this.setState({activePage, activeId});
+        let prevPage = this.state.activePage; 
+        this.setState({activePage, activeId, prevPage});
+        window.scroll({top: 0, behavior: 'smooth'});
     }
 
     renderActivePage(activeId) {
@@ -65,7 +73,7 @@ class App extends Component {
         const visibleData = this.foundString(this.filterDataforCountry(data));
         const activeData = visibleData.filter(el => el.id === activeId);
         if (activePage === 'main') return <Main />;
-        if (activePage === 'promoCoffee') return <PromoCoffee data={activeData[0]}/>;
+        if (activePage === 'promoCoffee') return <PromoCoffee data={activeData[0]}  onChangePage={this.changePage} prevPage={this.state.prevPage}/>;
         if (activePage === 'pleasure') return <Pleasure data={data} onChangePage={this.changePage}/>;
         if (activePage === 'menu') return <Menu data={visibleData} onChangePage={this.changePage} 
         onChangeValue={this.updateFoundStr} onChangeCountryFilter={this.updateCountry}/>

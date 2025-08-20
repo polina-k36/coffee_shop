@@ -48,9 +48,9 @@ const Menu = ({data, onChangePage, onChangeValue, onChangeCountryFilter}) => {
         <div className="nav nav-mt0 nav-g19">
           <label>Or filter</label>
           <div className="tabs">
-            <div onClick={e => {onChangeCountryFilter('Brazil'); e.target.classList.toggle('tab-active');}} className="tab tab-active">Brazil</div>
-            <div onClick={e => {onChangeCountryFilter('Kenya'); e.target.classList.toggle('tab-active');}} className="tab tab-active">Kenya</div>
-            <div onClick={e => {onChangeCountryFilter('Columbia'); e.target.classList.toggle('tab-active');}} className="tab tab-active">Columbia</div>
+            <div onClick={e => {onChangeCountryFilter('Brazil'); e.target.classList.toggle('tab-active');}} className="tab">Brazil</div>
+            <div onClick={e => {onChangeCountryFilter('Kenya'); e.target.classList.toggle('tab-active');}} className="tab">Kenya</div>
+            <div onClick={e => {onChangeCountryFilter('Columbia'); e.target.classList.toggle('tab-active');}} className="tab">Columbia</div>
           </div>
         </div>
 
