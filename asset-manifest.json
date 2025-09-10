@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.js": "/coffee_shop/static/js/main.5db4d67c.js",
+    "main.js": "/coffee_shop/static/js/main.9db4b8a7.js",
     "index.html": "/coffee_shop/index.html",
-    "main.5db4d67c.js.map": "/coffee_shop/static/js/main.5db4d67c.js.map"
+    "main.9db4b8a7.js.map": "/coffee_shop/static/js/main.9db4b8a7.js.map"
   },
   "entrypoints": [
-    "static/js/main.5db4d67c.js"
+    "static/js/main.9db4b8a7.js"
   ]
 }
